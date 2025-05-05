@@ -2,46 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bike Theft in NYC</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- AOS Library for Scroll Animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-  <header>
-    <h1>🚲 Bike Theft in NYC</h1>
-    <p>Analyzing patterns, locations, and prevention strategies</p>
+
+  <!-- Hero Banner -->
+  <header class="hero">
+    <div class="overlay">
+      <h1 data-aos="fade-down">🚲 Bike Theft in NYC</h1>
+      <p data-aos="fade-up">Where bikes disappear — and what we can do about it</p>
+    </div>
   </header>
 
-  <section id="intro">
+  <!-- Introduction -->
+  <section id="intro" data-aos="fade-up">
     <h2>About This Project</h2>
-    <p>
-      This site presents an analysis of bike theft incidents in New York City, using open datasets and data visualizations to uncover trends and hotspots.
-    </p>
+    <p>This project visualizes open data from NYC to uncover patterns in bike theft across boroughs, seasons, and neighborhoods.</p>
+  
+    <!-- Embedded video -->
+    <video controls class="video-full">
+      <source src="videos/Roject_Presentation_Group_23.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </section>
+  
 
-  <section id="visuals">
+  <!-- Data Visualizations -->
+  <section id="visuals" data-aos="fade-up">
     <h2>Data Visualizations</h2>
-    <p>Below are interactive charts and maps showing where and when bikes are most commonly stolen.</p>
-    <!-- Example placeholder -->
-    <div class="chart-placeholder">[Insert Chart Here]</div>
+    <p>Explore trends across time and boroughs with the help of charts and heatmaps.</p>
+    <div class="chart-placeholder">[Interactive Chart Placeholder]</div>
   </section>
 
-  <section id="map">
+  <!-- Theft Hotspot Map -->
+  <section id="map" data-aos="fade-up">
     <h2>Theft Hotspots Map</h2>
-    <div class="map-placeholder">[Insert Map Here]</div>
+    <p>Use this map to explore the most common areas where bikes are reported stolen.</p>
+    <iframe src="images/interactive_map_filtered.html" class="map-frame" title="Interactive Theft Map"></iframe>
   </section>
 
-  <section id="conclusions">
+
+  <!-- Findings -->
+  <section id="conclusions" data-aos="fade-up">
     <h2>Key Findings</h2>
     <ul>
       <li>Most thefts occur in Manhattan and Brooklyn</li>
-      <li>Summer months see higher rates</li>
-      <li>Unlocked bikes are the most frequent target</li>
+      <li>Summer months have higher incidents</li>
+      <li>Unlocked bikes are especially vulnerable</li>
     </ul>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>Made by [Your Name] | Source: NYC Open Data</p>
+    <p>Made by [Your Name] | Data Source: NYC Open Data | Hosted on GitHub Pages</p>
   </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="script.js"></script>
 </body>
 </html>
