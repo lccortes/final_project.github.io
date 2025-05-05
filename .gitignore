@@ -1,0 +1,9 @@
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+Gemfile.lock
+# this file is too large to be stored in the repository
+data/merged_data_TA.csv  
+

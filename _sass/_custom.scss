@@ -1,0 +1,48 @@
+/* Light yellow background for whole site */
+body {
+    background-color: #fffde7 !important;
+  }
+  
+  /* Header area */
+  .masthead,
+  .masthead__inner-wrap,
+  .site-header {
+    background-color: #fbc02d !important;
+    color: #000 !important;
+    border-bottom: none !important;
+  }
+  
+  /* Header links */
+  .site-title a,
+  .masthead__menu a {
+    color: #000 !important;
+  }
+  
+  /* Footer */
+  .page__footer {
+    background-color: #fbc02d !important;
+    color: #000 !important;
+  }
+
+  /* Hide "Quick-Start Guide" link in the nav */
+.greedy-nav .masthead__menu-item a[href*="quick-start-guide"] {
+    display: none !important;
+  }
+
+  .masthead {
+    background-color: #f7c53f !important;
+  }
+  
+  .masthead__inner-wrap {
+    background-color: #f7c53f !important;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #fffbea;  // light yellow full-page background
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;  // prevent horizontal scrollbars if any
+  }
+  
