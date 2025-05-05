@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    color: #333;
+  }
+  
+  header {
+    background: #222;
+    color: #fff;
+    padding: 2em;
+    text-align: center;
+  }
+  
+  section {
+    padding: 2em;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  h2 {
+    color: #0074D9;
+  }
+  
+  .chart-placeholder, .map-placeholder {
+    background: #eee;
+    border: 1px dashed #aaa;
+    padding: 3em;
+    text-align: center;
+    margin-top: 1em;
+  }
+  
+  footer {
+    background: #f1f1f1;
+    text-align: center;
+    padding: 1em;
+    margin-top: 3em;
+  }
+  
