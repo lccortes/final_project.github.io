@@ -39,12 +39,196 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin-top: 1em;
   }
-  
+
   .video-full {
     width: 100%;
     max-width: 800px;
     margin-top: 1em;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .bike-animation {
+    position: fixed;
+    top: 10%;
+    left: -10%;
+    font-size: 3rem;
+    z-index: 1000;
+    animation: ride-across 12s linear infinite;
+    pointer-events: none;
+  }
+  
+  @keyframes ride-across {
+    0% { left: -10%; transform: rotateY(0deg); }
+    50% { transform: rotateY(0deg); }
+    51% { transform: rotateY(180deg); } /* flip direction */
+    100% { left: 110%; transform: rotateY(180deg); }
+  }
+
+  .bike-svg {
+    width: 150px;
+    margin-top: 2em;
+  }
+
+  body {
+    background-color: #f5f5f5;
+    color: #222222;
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header, footer {
+    background-color: #e0e0e0;
+    color: #222222;
+    padding: 2em;
+    text-align: center;
+  }
+  
+  section {
+    padding: 2em;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  h1, h2 {
+    color: #b91c1c;
+  }
+  
+  a {
+    color: #b91c1c;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #facc15;
+  }
+  
+
+  .hero {
+    background: url('images/hero-bike.jpg') no-repeat center center/cover;
+    height: 80vh;
+    position: relative;
+    color: #fff;
+  }
+  
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* lighter overlay */
+  }
+  
+  .hero .overlay {
+    position: relative;
+    padding: 5em 2em;
+    z-index: 1;
+    text-align: center;
+  }
+  
+  #bike-party {
+    display: none;
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+    background: transparent;
+    margin-top: 2em;
+  }
+  
+  #bike-party.show {
+    display: block;
+  }
+  
+  .bike {
+    position: absolute;
+    font-size: 2.5rem;
+    top: 0;
+    left: -10%;
+    animation: ride-across 6s linear infinite;
+  }
+  
+  .bike:nth-child(1) { animation-delay: 0s; top: 0px; }
+  .bike:nth-child(2) { animation-delay: 1s; top: 25px; }
+  .bike:nth-child(3) { animation-delay: 2s; top: 50px; }
+  .bike:nth-child(4) { animation-delay: 3s; top: 75px; }
+  .bike:nth-child(5) { animation-delay: 4s; top: 100px; }
+  
+  @keyframes ride-across {
+    0% { left: -10%; }
+    100% { left: 110%; }
+  }
+  
+  
+  .chase-animation {
+    position: relative;
+    height: 100px;
+    margin-top: 20px;
+    overflow: hidden;
+    z-index: 1000;
+  }
+  
+  .chase-animation span {
+    position: absolute;
+    top: 0;
+    font-size: 2.5rem;
+    white-space: nowrap;
+    opacity: 0;
+  }
+  
+  .bike {
+    animation: bike-start 2.5s ease-out 0s forwards,
+               bike-flip 0.5s ease-out 2.5s forwards,
+               bike-run 3s linear 3s forwards;
+    left: -10%;
+  }
+  
+  .ninja {
+    animation: ninja-run 3s linear 3.2s forwards;
+    left: -20%;
+  }
+  
+  .police {
+    animation: police-run 3s linear 3.5s forwards;
+    left: -30%;
+  }
+  
+  @keyframes bike-start {
+    0% { left: -10%; opacity: 1; }
+    100% { left: 30%; opacity: 1; }
+  }
+  
+  @keyframes bike-flip {
+    0% { transform: scaleX(1); }
+    100% { transform: scaleX(-1); }
+  }
+  
+  @keyframes bike-run {
+    0% { left: 30%; opacity: 1; }
+    100% { left: 110%; opacity: 1; }
+  }
+  
+  @keyframes ninja-run {
+    0% { left: -20%; opacity: 1; }
+    100% { left: 100%; opacity: 1; }
+  }
+  
+  @keyframes police-run {
+    0%   { left: -30%; opacity: 1; }
+    100% { left: 110%; opacity: 1; }
+  }
+
+  .bottom-animation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    padding: 2em 0;
+  }
+  
+  .bottom-animation dotlottie-player {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
   }
   

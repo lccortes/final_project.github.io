@@ -10,6 +10,19 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
+  <!-- 🚴 Bike animation across the screen -->
+<!-- Intro Animation: Bike, Thief, Police -->
+  <div class="chase-animation">
+<!-- Intro Animation: Bike, Ninja, Police -->
+  <div class="chase-animation">
+    <span class="bike">🚴‍♀️</span>
+    <span class="ninja">🥷</span>
+    <span class="police">🚓</span>
+  </div>
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
+
+  </div>
 
   <!-- Hero Banner -->
   <header class="hero">
@@ -59,7 +72,19 @@
 
   <!-- Footer -->
   <footer>
-    <p>Made by [Your Name] | Data Source: NYC Open Data | Hosted on GitHub Pages</p>
+    <!-- Lottie animation at the bottom -->
+    <div class="bottom-animation">
+      <dotlottie-player
+        src="https://lottie.host/16eb1b07-977c-4fad-8953-114723e866e3/ouIN55Ljqx.lottie"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay>
+      </dotlottie-player>
+    </div>
+    
+
+    <p>Made by Group 23 | Data Source: NYC Open Data | Hosted on GitHub Pages</p>
   </footer>
 
   <!-- Scripts -->
@@ -67,6 +92,16 @@
   <script>
     AOS.init();
   </script>
+  <!-- Bikes appear at the bottom when scrolled to end -->
+  <div id="bike-party">
+    <span class="bike">🚴‍♀️</span>
+    <span class="bike">🚴‍♂️</span>
+    <span class="bike">🚴</span>
+    <span class="bike">🚴‍♀️</span>
+    <span class="bike">🚴‍♂️</span>
+  </div>
   <script src="script.js"></script>
 </body>
+
 </html>
+

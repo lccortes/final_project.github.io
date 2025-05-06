@@ -8,3 +8,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
   
+  window.addEventListener("scroll", () => {
+    const scrollPos = window.scrollY + window.innerHeight;
+    const docHeight = document.documentElement.offsetHeight;
+    const partyZone = document.getElementById("bike-party");
+  
+    if (scrollPos >= docHeight - 10) {
+      partyZone.classList.add("show");
+    }
+  });
+  
+  
