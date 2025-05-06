@@ -17,5 +17,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       partyZone.classList.add("show");
     }
   });
+
   
+
+  // Hide the chase animation after it's finished (7s after page load)
+  window.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+      const wrapper = document.querySelector(".chase-wrapper");
+      wrapper.classList.add("hide");
+    }, 7000); // matches animation length
+  });
+
   

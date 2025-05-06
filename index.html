@@ -8,21 +8,28 @@
 
   <!-- AOS Library for Scroll Animations -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
 </head>
 <body>
   <!-- 🚴 Bike animation across the screen -->
-<!-- Intro Animation: Bike, Thief, Police -->
-  <div class="chase-animation">
-<!-- Intro Animation: Bike, Ninja, Police -->
-  <div class="chase-animation">
-    <span class="bike">🚴‍♀️</span>
-    <span class="ninja">🥷</span>
-    <span class="police">🚓</span>
+<!-- Intro Animation Container -->
+  <div class="chase-wrapper">
+    <div class="chase-animation">
+      <span class="bike-chase">🚴‍♀️</span>
+      <span class="ninja">🥷</span>
+      <span class="police">🚓</span>
+    </div>
   </div>
   <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 
 
-  </div>
+  <nav class="top-nav">
+    <a href="#intro">About</a>
+    <a href="#visuals">Visualizations</a>
+    <a href="#map">Map</a>
+    <a href="#conclusions">Findings</a>
+  </nav>
 
   <!-- Hero Banner -->
   <header class="hero">
@@ -32,17 +39,71 @@
     </div>
   </header>
 
-  <!-- Introduction -->
   <section id="intro" data-aos="fade-up">
     <h2>About This Project</h2>
-    <p>This project visualizes open data from NYC to uncover patterns in bike theft across boroughs, seasons, and neighborhoods.</p>
+    <p>
+      This project explores NYC bike theft data collected by the NYPD between 2006 and 2024.
+      Using this public dataset, we identify temporal and spatial trends and visualize hotspots across boroughs.</p>
+    Use the menu below to quickly navigate to different sections of the page: learn about the dataset, explore visualizations, view the interactive theft map, and read our key findings.
+    </p>
   
-    <!-- Embedded video -->
-    <video controls class="video-full">
-      <source src="videos/Roject_Presentation_Group_23.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <div class="visual-cards" data-aos="fade-up">
+      <!-- Flip Card 1 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/dataset-info.png" alt="Dataset" onerror="this.src='https://via.placeholder.com/100x100.png?text=DATA';">
+          </div>
+          <div class="flip-card-back">
+            <h3>Dataset Overview</h3>
+            <p>
+              NYC Open Data from the NYPD with more then 80m theft cases, location, and time info:
+              <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Complaint-Data-Historic/qgea-i56i/data_preview" target="_blank" rel="noopener noreferrer">
+                Visit Dataset
+              </a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Flip Card 2 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/years-range.png" alt="Time Range" onerror="this.src='https://via.placeholder.com/100x100.png?text=YEARS';">
+          </div>
+          <div class="flip-card-back">
+            <h3>Time Range</h3>
+            <p>Data spans from 2006 to 2024.</p>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Flip Card 3 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/nyc-boroughs.png" alt="Boroughs" onerror="this.src='https://via.placeholder.com/100x100.png?text=NYC';">
+          </div>
+          <div class="flip-card-back">
+            <h3>City Coverage</h3>
+            <p>All five boroughs: Manhattan, Brooklyn, Queens, Bronx, and Staten Island.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="video-container" data-aos="fade-up">
+      <video controls class="video-full">
+        <source src="videos/Roject_Presentation_Group_23.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
   </section>
+
+
+
   
 
   <!-- Data Visualizations -->
@@ -69,6 +130,7 @@
       <li>Unlocked bikes are especially vulnerable</li>
     </ul>
   </section>
+
 
   <!-- Footer -->
   <footer>
@@ -101,6 +163,8 @@
     <span class="bike">🚴‍♂️</span>
   </div>
   <script src="script.js"></script>
+  <script>AOS.init();</script>
+
 </body>
 
 </html>
