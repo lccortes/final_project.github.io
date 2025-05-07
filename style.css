@@ -380,3 +380,14 @@
   .top-nav a:hover {
     color: #facc15;
   }
+  #sankeyDiagram {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.8s ease-in-out;
+  }
+  
+  #sankeyDiagram.animated {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  

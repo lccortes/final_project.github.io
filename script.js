@@ -28,4 +28,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }, 7000); // matches animation length
   });
 
+  window.addEventListener("scroll", () => {
+    const chart = document.getElementById("sankeyDiagram");
+    const chartTop = chart.getBoundingClientRect().top;
+    if (chartTop < window.innerHeight * 0.9) {
+      chart.classList.add("animated");
+    }
+  });
   
