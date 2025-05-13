@@ -49,7 +49,7 @@
       Using this public dataset, we identify temporal and spatial trends and visualize them across boroughs.
       We didn't ignore the human aspect of the crime, looking at the characteristics of the victims and suspects.</p>
     <p>
-    Use the menu to navigate to different page sections quickly: learn about the dataset, explore visualizations, view the interactive theft map, and read our key findings.
+    Use the menu to navigate to different page sections quickly: learn about the dataset, explore visualizations, and read our key findings.
     </p>
  </section>
 
@@ -68,7 +68,7 @@
           <div class="flip-card-back">
             <h3>Dataset Overview</h3>
             <p>
-              NYC Open Data from the NYPD with more then 80m theft cases, location, and time info:
+              NYC Open Data from the NYPD with more then 80k theft cases, location, and time info:
               <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Complaint-Data-Historic/qgea-i56i/data_preview" target="_blank" rel="noopener noreferrer">
                 Visit Dataset
               </a>.
@@ -114,7 +114,7 @@
 
 
     <p>For all these categories, the incident was unfortunately completed. The ratio between attempted and completed theft can be seen below.
-    It is, however, natural that the attempted cases are overall low, as it is rare that someone would report a theft attempt. 
+    It is, however, natural that the attempted cases are overall low, as it is rare that someone reports a theft attempt. 
       We thus conclude that all of the attempted cases were prevented by police intervention.</p>
   </section>
 
@@ -146,11 +146,7 @@
     The observations we made about sex and age group are now more prominent. 
     The correlation of the race descriptions is what gives us a better insight in the prejudice we assumed earlier.</p>
     </div>
-    <div style="text-align: center;">
-      <iframe src="notebooks/cor_matrix.html"
-            width="1000" height="600" style="border:none;">
-      </iframe>
-    </div>
+
   </section>
   
 
@@ -163,15 +159,21 @@
     <p>We move on to analysing the time of the incidents. The fastest way to get a good representation of the time distribution of the events is a bar plot over time.
     By choosing the time scale of the axis using the dropdown menu, one can see the crime distribution of the years registered
       The incidences appear constant throughout the days of the week or the month, but a clear pattern can be observed when looking at the distribution through hours of the day and months of the year.
-    Surprisingly, the majority of reports happen in the late evening, leading us to the conclusion that the actual crime also took place around that time. 
-    The incident relation over the month we choose to explore deeper, this time looking at each borough independently.</p>
+    Surprisingly, the majority of reports happen in the late evening, leading us to the conclusion that the actual crime also took place around that time. </p>
+    The relation between crime rates and the month of the year is also obvious and will be discussed below.</p>
     <div style="text-align: center;">
       <iframe src="notebooks/interactive_trend_analysis.html"
             width="1000" height="600" style="border:none;">
       </iframe>
     </div>
-    <p>The incident relation over the months we chose to explore deeper, this time looking at each borough independently.
-      The periodic pattern is now very apparent. </p>
+    <p>We chose to explore the relationship between incident rates and time by plotting their progression across months, this time broken down by borough. 
+      The resulting charts reveal a clear seasonal periodic pattern, suggesting that bike usage—and consequently, bike thefts—increase during the summer months.
+      Another pleasant insight we get from the line graph is that the recent years we notice a substantial drop in cases, even during the summer months 
+ </p>
+    <p>
+    One more observation is that the total reports in Manhattan and Brooklyn are consistently higher than the other boroughs.
+    We elaborate on the special distributions of our data in the next section.
+    In the meantime, explore the following graph and notice the pattern firsthand.</p>
     <div style="text-align: center;">
       <iframe src="images/bike_thefts_time_plot2.html"
             width="1000" height="600" style="border:none;">
@@ -180,8 +182,11 @@
   
   <!-- Data Visualizations --------------------------------------------------------------------- map -------------------------------------->
   <section id="map" data-aos="fade-up">
-    <h2>Incidents through space</h2>
-    <p>The map.</p>
+    <h2>Neighbourhood safety</h2>
+    <p>We continue our analysis of the data with our final visualization, a map through time.
+    We already understood that the distribution of incidences is not smooth in all boroughs, with Manhattan and Brooklyn being the neighbourhoods with the majority of cases.
+    In order to showcase this point further, we created a video of all the reports on the map of NYC. Every frame is an hour passing by.
+    With the use of a heatmap, we make our point of easily spotting the hotspots in each neighbourhood.</p>
     <div style="text-align: center;">
       <iframe src="notebooks/heatmap_with_time.html"
             width="1000" height="600" style="border:none;">
@@ -191,10 +196,13 @@
   <!-- Findings -->
   <section id="conclusions" data-aos="fade-up">
     <h2>Key Findings</h2>
+    <p>After we analyzed different aspects of bike theft in NYC, we reached the following conclusions:</p>
     <ul>
+      <li>Most bike theft cases are reported after the fact, leaving the police departments unable to help.</li>
+      <li>Victims reporting the incidents are prejudiced, skewing the data  </li>
+      <li>Summer months have higher incidents as people use their bikes more.</li>
+      <li>People have safe parking spaces for overnight parking, but have a false sense of security when leaving their bikes parked outside during the day.</li>
       <li>Most thefts occur in Manhattan and Brooklyn</li>
-      <li>Summer months have higher incidents</li>
-      <li>People have safe parking spaces for the overnight parking, but have a false sense of security when leaving their bikes parked outside during the day.</li>
     </ul>
   </section>
 
