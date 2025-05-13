@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Trend Analysis with Slicer</title>
+</head>
+<body>
+
+
+<!-- Load require.js. Delete this if your page already loads require.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+<script type="application/vnd.jupyter.widget-state+json">
+{
+  "version_major": 2,
+  "version_minor": 0,
+  "state": {
+    "ea465f90f403492c8aaaa6b3593ee7cf": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "6b9131923b29473aba7eba26d3c2706d": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "4e262fdcd4c24d1c8804cb9d99a76018": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_ea465f90f403492c8aaaa6b3593ee7cf",
+        "style": "IPY_MODEL_6b9131923b29473aba7eba26d3c2706d"
+      }
+    },
+    "bb107b85faf6479e8c295601057221b4": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "f7a455469c1444a1a7e5f7561694b664": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "26c1a59165ff4460915700b2f08f4267": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_bb107b85faf6479e8c295601057221b4",
+        "style": "IPY_MODEL_f7a455469c1444a1a7e5f7561694b664"
+      }
+    },
+    "f92d20975ebb4988b91c2f893d25306b": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "2fe6c9454ff3439bbbbb9c525e35b425": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_26c1a59165ff4460915700b2f08f4267",
+          "IPY_MODEL_882a97e83c4947178e5b441634dafbdc"
+        ],
+        "layout": "IPY_MODEL_f92d20975ebb4988b91c2f893d25306b"
+      }
+    },
+    "85b01a3e44d74a31bc784585da8899f7": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "882a97e83c4947178e5b441634dafbdc": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_85b01a3e44d74a31bc784585da8899f7",
+        "outputs": []
+      }
+    },
+    "e83abe31edd5452e9b96aca25cc5e691": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "b6a66dd9d00d44e9b82cd8c12849b00c": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "ee6f2aad31964bdf8220a8e26eb4faed": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 2,
+        "layout": "IPY_MODEL_e83abe31edd5452e9b96aca25cc5e691",
+        "style": "IPY_MODEL_b6a66dd9d00d44e9b82cd8c12849b00c"
+      }
+    },
+    "584c6af2c7694f1db90161988eab3d80": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "32b2189c143e4e5cbd6993cd591222fb": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_ee6f2aad31964bdf8220a8e26eb4faed",
+          "IPY_MODEL_b899490abe6e4449ba8624304fd718a5"
+        ],
+        "layout": "IPY_MODEL_584c6af2c7694f1db90161988eab3d80"
+      }
+    },
+    "749b4d60ba4b4ec08dcd51198ae9a626": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "b899490abe6e4449ba8624304fd718a5": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_749b4d60ba4b4ec08dcd51198ae9a626",
+        "outputs": []
+      }
+    },
+    "ea0c816ba08c4fb29f5f9c4f539f83d3": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "2ad9f7d7f25e489dabea61b2c72320e0": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "8070667253614ec3894c20738ca3366b": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Race",
+          "Sex",
+          "Age"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_ea0c816ba08c4fb29f5f9c4f539f83d3",
+        "style": "IPY_MODEL_2ad9f7d7f25e489dabea61b2c72320e0"
+      }
+    },
+    "79e10bbe15374855bf6c18ec08bbcce9": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "5ef272f5152d44b7b1d356142b83632f": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_8070667253614ec3894c20738ca3366b",
+          "IPY_MODEL_a83c7f56b6b649ffa295aaeab9de0523"
+        ],
+        "layout": "IPY_MODEL_79e10bbe15374855bf6c18ec08bbcce9"
+      }
+    },
+    "4189de437d464728b2518f2d5a94739f": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "a83c7f56b6b649ffa295aaeab9de0523": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_4189de437d464728b2518f2d5a94739f",
+        "outputs": []
+      }
+    },
+    "65c4190cef0f478d9d9850c2b55d1419": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "53a49dc7dc2546babb94f871c8c7e235": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "62c766db7b5140719609767e5b2e677b": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 2,
+        "layout": "IPY_MODEL_65c4190cef0f478d9d9850c2b55d1419",
+        "style": "IPY_MODEL_53a49dc7dc2546babb94f871c8c7e235"
+      }
+    },
+    "b0c704dfd17842aa99cd2defccbb427d": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "298d7612fc9f4313ae52bb655dafda7f": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_62c766db7b5140719609767e5b2e677b",
+          "IPY_MODEL_0c67368150d5440e8470fccd0618eb2a"
+        ],
+        "layout": "IPY_MODEL_b0c704dfd17842aa99cd2defccbb427d"
+      }
+    },
+    "4f181b7800694302aa64b0be50e12886": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "0c67368150d5440e8470fccd0618eb2a": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_4f181b7800694302aa64b0be50e12886",
+        "outputs": []
+      }
+    },
+    "6db6b9388ebc4bf89d5a7a39df38f4c3": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "42cdd4cb3c2c43fab0a8f58348958b01": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "d8b6a0f2724241a08ad20b8a31dc31f2": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_6db6b9388ebc4bf89d5a7a39df38f4c3",
+        "style": "IPY_MODEL_42cdd4cb3c2c43fab0a8f58348958b01"
+      }
+    },
+    "25e7bf38491b47759e4e82db3d151b5f": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "d34ce8ea29604931a217e98af9a3debd": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_d8b6a0f2724241a08ad20b8a31dc31f2",
+          "IPY_MODEL_abf46611fba045cf984cca95faae6b1e"
+        ],
+        "layout": "IPY_MODEL_25e7bf38491b47759e4e82db3d151b5f"
+      }
+    },
+    "b92868e723d74d1381f5c82d5b80ef8e": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "abf46611fba045cf984cca95faae6b1e": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_b92868e723d74d1381f5c82d5b80ef8e",
+        "outputs": []
+      }
+    },
+    "d550c210be984e8ca0d77138112df75a": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "51c05da4dede41d487adc7fbe9129fa3": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "740d4a2fab4348ca9c53f7ec63a90bf8": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_d550c210be984e8ca0d77138112df75a",
+        "style": "IPY_MODEL_51c05da4dede41d487adc7fbe9129fa3"
+      }
+    },
+    "a1310acb83da439883daa64894e13b36": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "e4e91c70ec9846589927137a20fcb9a4": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_740d4a2fab4348ca9c53f7ec63a90bf8",
+          "IPY_MODEL_e9f96079be474e93b82b8f8afd98c8b3"
+        ],
+        "layout": "IPY_MODEL_a1310acb83da439883daa64894e13b36"
+      }
+    },
+    "e5bc57455db14c8d95678ff99cbbfc98": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "e9f96079be474e93b82b8f8afd98c8b3": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_e5bc57455db14c8d95678ff99cbbfc98",
+        "outputs": []
+      }
+    },
+    "2a8e6b3fb2ce4d6095dc16ecb2b20d12": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "b8f0a8fe394547c4a551c0e4a91bd3b0": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "37c52a6e83b0471287f6cefb68965e06": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_2a8e6b3fb2ce4d6095dc16ecb2b20d12",
+        "style": "IPY_MODEL_b8f0a8fe394547c4a551c0e4a91bd3b0"
+      }
+    },
+    "bbc27e6145c34877a49f96305017d5d5": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "bddd3ade5b17478f882081a49349f041": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_37c52a6e83b0471287f6cefb68965e06",
+          "IPY_MODEL_00a26a23aa8e4d38b6a6e0220c1469af"
+        ],
+        "layout": "IPY_MODEL_bbc27e6145c34877a49f96305017d5d5"
+      }
+    },
+    "65a6748a8cfc40899087a2c740e3cb51": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "00a26a23aa8e4d38b6a6e0220c1469af": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_65a6748a8cfc40899087a2c740e3cb51",
+        "outputs": []
+      }
+    },
+    "756b00f2597d41568106dcdb0b63a673": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "ba9e99ec433844c48ec67432c1a5a28a": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "73b3b0ab5a8e405db71a5a50b81874ed": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 1,
+        "layout": "IPY_MODEL_756b00f2597d41568106dcdb0b63a673",
+        "style": "IPY_MODEL_ba9e99ec433844c48ec67432c1a5a28a"
+      }
+    },
+    "027658c2e5c44583aa33b1d0d8311114": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "a49ed1e99e85415b8f1cf6731042c50f": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_73b3b0ab5a8e405db71a5a50b81874ed",
+          "IPY_MODEL_f7672cf8ee874eceb15f81bbb674bf71"
+        ],
+        "layout": "IPY_MODEL_027658c2e5c44583aa33b1d0d8311114"
+      }
+    },
+    "b24faf842c3b4fb49d01d119cc960ef6": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "f7672cf8ee874eceb15f81bbb674bf71": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_b24faf842c3b4fb49d01d119cc960ef6",
+        "outputs": []
+      }
+    },
+    "8558b2614ba14ca48171637fe6be6004": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "a58e967dfbd44a5cb1cccc4e2b39fe65": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "74edbbbf957d489ea7ddb1344c084977": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_8558b2614ba14ca48171637fe6be6004",
+        "style": "IPY_MODEL_a58e967dfbd44a5cb1cccc4e2b39fe65"
+      }
+    },
+    "274586c220104c19837085c78c6cead7": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "7f57595b92f6449b9c8dc103c60c9b03": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_74edbbbf957d489ea7ddb1344c084977",
+          "IPY_MODEL_8f4133add3c942daafbfd716479c14cc"
+        ],
+        "layout": "IPY_MODEL_274586c220104c19837085c78c6cead7"
+      }
+    },
+    "c7b4be5e55d64c289674e2aeaade072a": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "8f4133add3c942daafbfd716479c14cc": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_c7b4be5e55d64c289674e2aeaade072a",
+        "outputs": []
+      }
+    },
+    "180dff4d34934c19a45cf11799995b13": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "d75f126139c2418b834e3e73b81081ec": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "bdbfaa4debee4264bb2124d878eb9dd1": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Race",
+          "Sex",
+          "Age"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_180dff4d34934c19a45cf11799995b13",
+        "style": "IPY_MODEL_d75f126139c2418b834e3e73b81081ec"
+      }
+    },
+    "e076154e6ec74555aa8997f4742ca5fa": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "1cb2b12d24cf49deb2f7d8357b655c36": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_bdbfaa4debee4264bb2124d878eb9dd1",
+          "IPY_MODEL_c2cbde9e3f9643d591273e4c931a7c8c"
+        ],
+        "layout": "IPY_MODEL_e076154e6ec74555aa8997f4742ca5fa"
+      }
+    },
+    "5c396c9ea9564ca78623b4cadc5c542f": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "c2cbde9e3f9643d591273e4c931a7c8c": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_5c396c9ea9564ca78623b4cadc5c542f",
+        "outputs": []
+      }
+    },
+    "32e364ba9de040ad85cc1e32f217d3b7": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "47e835bc927240d19af9337bc4075331": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "fa65ebaa8ba84b73a947e004a900fc24": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_32e364ba9de040ad85cc1e32f217d3b7",
+        "style": "IPY_MODEL_47e835bc927240d19af9337bc4075331"
+      }
+    },
+    "043bd92379ad4c1cad1ebb606fc12f6d": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "af86f74b117f4829bdecf9211b1e3c7b": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_fa65ebaa8ba84b73a947e004a900fc24",
+          "IPY_MODEL_3c2e43fa7a334b61881883a0e044b869"
+        ],
+        "layout": "IPY_MODEL_043bd92379ad4c1cad1ebb606fc12f6d"
+      }
+    },
+    "7189dcb9d77d40d9b270f3d9ce44e464": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "3c2e43fa7a334b61881883a0e044b869": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_7189dcb9d77d40d9b270f3d9ce44e464",
+        "outputs": []
+      }
+    },
+    "ec4c63cdb8c34047a97cba3b5e9a4d2b": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "67e4b23178c048bc89757b217fbac991": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "15ec354507244b47ad2159ca7f27b3be": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_ec4c63cdb8c34047a97cba3b5e9a4d2b",
+        "style": "IPY_MODEL_67e4b23178c048bc89757b217fbac991"
+      }
+    },
+    "242806eca4784ac9954523b3958a06f5": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "7e13c279f3c84f369f35728a7fc90061": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_15ec354507244b47ad2159ca7f27b3be",
+          "IPY_MODEL_11bf377245714d65a3f037bf74f4be95"
+        ],
+        "layout": "IPY_MODEL_242806eca4784ac9954523b3958a06f5"
+      }
+    },
+    "659fffca31c04f1792513e9d45baf2c6": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "11bf377245714d65a3f037bf74f4be95": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_659fffca31c04f1792513e9d45baf2c6",
+        "outputs": []
+      }
+    },
+    "c166e53cb5064d05b5f94e4120c2a73a": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "3be7f27f1b0b47669eb6a87ab96e02c0": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "c9d4441664a94b9ca3ea876560c245dd": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_c166e53cb5064d05b5f94e4120c2a73a",
+        "style": "IPY_MODEL_3be7f27f1b0b47669eb6a87ab96e02c0"
+      }
+    },
+    "0cb161d932aa4713be724bcca64d11f0": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "87177aac3e2e48ac8968401ba8f036c4": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_c9d4441664a94b9ca3ea876560c245dd",
+          "IPY_MODEL_4ab1fb4e7e954a0eab4cfdc0358e0b92"
+        ],
+        "layout": "IPY_MODEL_0cb161d932aa4713be724bcca64d11f0"
+      }
+    },
+    "6f7b3bd92a6443359d2808b05b8812c3": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "4ab1fb4e7e954a0eab4cfdc0358e0b92": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_6f7b3bd92a6443359d2808b05b8812c3",
+        "outputs": []
+      }
+    },
+    "9d10948e7356405a8dd1e0e2db11d2be": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "554cd47b060b40fabec6ee09cd782c5f": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "878603a5e569434b8cff63e366c34d63": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_9d10948e7356405a8dd1e0e2db11d2be",
+        "style": "IPY_MODEL_554cd47b060b40fabec6ee09cd782c5f"
+      }
+    },
+    "cb55abec81c847ecaca4fcb6cad929bf": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "9c6faf2ac87a4cc18aa208c9c1f05f4c": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_878603a5e569434b8cff63e366c34d63",
+          "IPY_MODEL_64e00081c88f4e9fbf83c3ce49c2ca45"
+        ],
+        "layout": "IPY_MODEL_cb55abec81c847ecaca4fcb6cad929bf"
+      }
+    },
+    "fffd6633405c475e972f58b052b13157": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "64e00081c88f4e9fbf83c3ce49c2ca45": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_fffd6633405c475e972f58b052b13157",
+        "outputs": []
+      }
+    },
+    "4f1d7729876f4ddc9792f451ab76d05c": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "710803f1a71a45759b923b3818630137": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "0daff6b21776461dad5d75acb40fa4c4": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_4f1d7729876f4ddc9792f451ab76d05c",
+        "style": "IPY_MODEL_710803f1a71a45759b923b3818630137"
+      }
+    },
+    "f283d9e8352a4ed19e375b99a6e3458f": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "14f7b114d1934bd085a37f4b119e0625": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_0daff6b21776461dad5d75acb40fa4c4",
+          "IPY_MODEL_1a6823813fb74e199db92f567da1d08e"
+        ],
+        "layout": "IPY_MODEL_f283d9e8352a4ed19e375b99a6e3458f"
+      }
+    },
+    "18e5eb15c56a4c12821338223f6726b4": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "1a6823813fb74e199db92f567da1d08e": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_18e5eb15c56a4c12821338223f6726b4",
+        "outputs": []
+      }
+    },
+    "7fa89fd358264aa1a8f8bb7265cc7624": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "1f41d2004cdb4654929befa7d4373271": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "f50eacc6d4de4b008751521ae1e3a3e0": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_7fa89fd358264aa1a8f8bb7265cc7624",
+        "style": "IPY_MODEL_1f41d2004cdb4654929befa7d4373271"
+      }
+    },
+    "091dfc752d8e422886e081b4cbed7cae": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "cb7acc8462e64df49d08b99722198a98": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_f50eacc6d4de4b008751521ae1e3a3e0",
+          "IPY_MODEL_7115d6c7eda14cb0a2c0ad5a761b00fa"
+        ],
+        "layout": "IPY_MODEL_091dfc752d8e422886e081b4cbed7cae"
+      }
+    },
+    "8a8938681bea473080cef56149304fda": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "7115d6c7eda14cb0a2c0ad5a761b00fa": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_8a8938681bea473080cef56149304fda",
+        "outputs": []
+      }
+    },
+    "461ce2c6d5b0447585b155b9b9555fa6": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "33fccb249d8f44e09c4969a5c16dcdb5": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_f50eacc6d4de4b008751521ae1e3a3e0"
+        ],
+        "layout": "IPY_MODEL_461ce2c6d5b0447585b155b9b9555fa6"
+      }
+    },
+    "07999d90095f4c09b216b6e2d76e388f": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "b857cd2777aa4119bb3db178bbadb17a": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "00e141b3b3554ee399785b9b1d1a2321": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_07999d90095f4c09b216b6e2d76e388f",
+        "style": "IPY_MODEL_b857cd2777aa4119bb3db178bbadb17a"
+      }
+    },
+    "b6c87beead064c2a8bc05e02594e0703": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "2a444aef672844ed89cbc085532a30ac": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_00e141b3b3554ee399785b9b1d1a2321",
+          "IPY_MODEL_939da246e16c4f40b7b2d89ae6766b9f"
+        ],
+        "layout": "IPY_MODEL_b6c87beead064c2a8bc05e02594e0703"
+      }
+    },
+    "d34a44db01474cc88671db14c1486800": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "939da246e16c4f40b7b2d89ae6766b9f": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_d34a44db01474cc88671db14c1486800",
+        "outputs": []
+      }
+    },
+    "bb97a624ff0d44f690cf99aeb57b03ba": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "74ee693ed235473d859ea31d66652f32": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_00e141b3b3554ee399785b9b1d1a2321"
+        ],
+        "layout": "IPY_MODEL_bb97a624ff0d44f690cf99aeb57b03ba"
+      }
+    },
+    "8ea62bea0cdb4ac8a291494daafd07d8": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "e895082f348f48548a783449edd85af5": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "f415ed09da8a4f81a89bc4b7f53086ce": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Race",
+          "Sex",
+          "Age"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_8ea62bea0cdb4ac8a291494daafd07d8",
+        "style": "IPY_MODEL_e895082f348f48548a783449edd85af5"
+      }
+    },
+    "bbb89adb21e347199105a118368bda12": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "891e8111a3f64fe5a022df04c4bafa58": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_f415ed09da8a4f81a89bc4b7f53086ce",
+          "IPY_MODEL_9f9880f7a5484aaf85377ec1c3f174a1"
+        ],
+        "layout": "IPY_MODEL_bbb89adb21e347199105a118368bda12"
+      }
+    },
+    "8ee7709b39df4470b11c933d5c984f78": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "9f9880f7a5484aaf85377ec1c3f174a1": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_8ee7709b39df4470b11c933d5c984f78",
+        "outputs": []
+      }
+    },
+    "50a8c402791d49a69e883341e3efceda": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "b7911ecb3c614774bc357b25572e9b8f": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "c520ca29077e461eb219928b593e368f": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_50a8c402791d49a69e883341e3efceda",
+        "style": "IPY_MODEL_b7911ecb3c614774bc357b25572e9b8f"
+      }
+    },
+    "d7a2bb14989f462d9d5aba0e549ca8c6": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "833850775604428bb91851278bf1bc1b": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_c520ca29077e461eb219928b593e368f",
+          "IPY_MODEL_28962c488cd84782809d2a093a6235d6"
+        ],
+        "layout": "IPY_MODEL_d7a2bb14989f462d9d5aba0e549ca8c6"
+      }
+    },
+    "03ad4bc83b3a40fb87a6828598e84657": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "28962c488cd84782809d2a093a6235d6": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_03ad4bc83b3a40fb87a6828598e84657",
+        "outputs": []
+      }
+    },
+    "265499272c6f484fa77ca71a046ac6c4": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "3167ee90f7984c18a8e72f1e30af43f0": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_c520ca29077e461eb219928b593e368f"
+        ],
+        "layout": "IPY_MODEL_265499272c6f484fa77ca71a046ac6c4"
+      }
+    },
+    "84400f0ed23747a2aee9810b2d32c73e": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "7d44c16cac50468bba327bbdf037b6bd": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "40791580cef641ae8bf027b293d9d9d7": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_84400f0ed23747a2aee9810b2d32c73e",
+        "style": "IPY_MODEL_7d44c16cac50468bba327bbdf037b6bd"
+      }
+    },
+    "cebcd411af0744b0ac21a3a0b8b80917": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "9aef8669a1654f0eb84ad5f830dfd22b": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_40791580cef641ae8bf027b293d9d9d7",
+          "IPY_MODEL_2138b9ff61f941a0a0402283ded28c7b"
+        ],
+        "layout": "IPY_MODEL_cebcd411af0744b0ac21a3a0b8b80917"
+      }
+    },
+    "77c61d09d4724413a9159a6dae5a2218": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "2138b9ff61f941a0a0402283ded28c7b": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_77c61d09d4724413a9159a6dae5a2218",
+        "outputs": []
+      }
+    },
+    "cac34f9db5d94ebd9df9e48cb3575a91": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "687a8d72fcac43fcb2cee3e3e829e527": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_40791580cef641ae8bf027b293d9d9d7"
+        ],
+        "layout": "IPY_MODEL_cac34f9db5d94ebd9df9e48cb3575a91"
+      }
+    },
+    "494bd16580004c0a8a2ae448cdd435b7": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "bf824b422eb04bab9a04ad581bf1553a": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "b4e55c6e66d24b5d81b319bf79012921": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_494bd16580004c0a8a2ae448cdd435b7",
+        "style": "IPY_MODEL_bf824b422eb04bab9a04ad581bf1553a"
+      }
+    },
+    "c6e8d53dafd24578bc638f814e10b8a1": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "39d2dd2db31346a9a226275f5f587dd1": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_b4e55c6e66d24b5d81b319bf79012921",
+          "IPY_MODEL_8da3447daf1b4ce6ad6e2a7483bd1ee3"
+        ],
+        "layout": "IPY_MODEL_c6e8d53dafd24578bc638f814e10b8a1"
+      }
+    },
+    "c0c34a294cda4d1baee6c4eb686a6f85": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "8da3447daf1b4ce6ad6e2a7483bd1ee3": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_c0c34a294cda4d1baee6c4eb686a6f85",
+        "outputs": []
+      }
+    },
+    "5882efbd3e504f84ace51a07611b113d": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "265969b3c6144da5b25331d02362bcb4": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_b4e55c6e66d24b5d81b319bf79012921"
+        ],
+        "layout": "IPY_MODEL_5882efbd3e504f84ace51a07611b113d"
+      }
+    },
+    "33293c160bcb4f7d81d978082843bc2a": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "9a9aa2d7df6d4c0c843ff4f3ca3ce794": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "6d36fedc056e4042a8490dd9cbfecc2c": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_33293c160bcb4f7d81d978082843bc2a",
+        "style": "IPY_MODEL_9a9aa2d7df6d4c0c843ff4f3ca3ce794"
+      }
+    },
+    "086950a205f242f295cd5a6f1aa12bba": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "1437a45c91544a6086b2ba629fa6a500": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_6d36fedc056e4042a8490dd9cbfecc2c",
+          "IPY_MODEL_8ab31e77b66f4469bf0f7b52570f8f33"
+        ],
+        "layout": "IPY_MODEL_086950a205f242f295cd5a6f1aa12bba"
+      }
+    },
+    "4f0f95c96f3843fc8c2ac8cc1b31c427": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "8ab31e77b66f4469bf0f7b52570f8f33": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_4f0f95c96f3843fc8c2ac8cc1b31c427",
+        "outputs": []
+      }
+    },
+    "b1683142b6374046bd46a13cec6c047e": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "d1d75197436545e0828f31064320a29f": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_6d36fedc056e4042a8490dd9cbfecc2c"
+        ],
+        "layout": "IPY_MODEL_b1683142b6374046bd46a13cec6c047e"
+      }
+    },
+    "5a2fb7134a2d43d0bbe7b536f477d40c": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "4af619d25fa44993be6766c3a44a34b7": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "9a658a6b7b10404981f4f496abd2be71": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_5a2fb7134a2d43d0bbe7b536f477d40c",
+        "style": "IPY_MODEL_4af619d25fa44993be6766c3a44a34b7"
+      }
+    },
+    "524f32c3f7024fd2960438e80d0be364": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "2d75862dab204abb9d3066ad0d4f2945": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_9a658a6b7b10404981f4f496abd2be71",
+          "IPY_MODEL_116202024ad34cd687735644b3e5cb0f"
+        ],
+        "layout": "IPY_MODEL_524f32c3f7024fd2960438e80d0be364"
+      }
+    },
+    "acbd2a77c3624bc19b3a0877199b4b27": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "116202024ad34cd687735644b3e5cb0f": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_acbd2a77c3624bc19b3a0877199b4b27",
+        "outputs": []
+      }
+    },
+    "52f306ab39d542938cfece80d98524ad": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "3cd8c1d20f5647549e8861c8ce452c59": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_9a658a6b7b10404981f4f496abd2be71"
+        ],
+        "layout": "IPY_MODEL_52f306ab39d542938cfece80d98524ad"
+      }
+    },
+    "6a130ae15e1c47799a710bc14950e8a0": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "b931b72de2a548d48c91f9a4ec375816": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "348261288fb9478b9cb8257c00e19ce0": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_6a130ae15e1c47799a710bc14950e8a0",
+        "style": "IPY_MODEL_b931b72de2a548d48c91f9a4ec375816"
+      }
+    },
+    "fe6818e0c36b4eff8127a1898b432b83": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "a68c586f03bc4bc68bc536a25956c233": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_348261288fb9478b9cb8257c00e19ce0",
+          "IPY_MODEL_48f13faa3c56443ea22b63a4bfefb73b"
+        ],
+        "layout": "IPY_MODEL_fe6818e0c36b4eff8127a1898b432b83"
+      }
+    },
+    "e5f3d49a0b68480a95e5146f432d4c29": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "48f13faa3c56443ea22b63a4bfefb73b": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_e5f3d49a0b68480a95e5146f432d4c29",
+        "outputs": []
+      }
+    },
+    "1df52beab7fe4c8b8428e96af3853bbc": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "f827e2af5c8e4e61a29a325ff8b85a86": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_348261288fb9478b9cb8257c00e19ce0"
+        ],
+        "layout": "IPY_MODEL_1df52beab7fe4c8b8428e96af3853bbc"
+      }
+    },
+    "20ccd2dd64744d07b82a73a54dedfa61": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "209d48b6134846958cab4f434cad1e64": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "759fbb8fee764a4fbb84a3d81bac9789": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "Month",
+          "Day of Month",
+          "Day of Week",
+          "Hour of Day"
+        ],
+        "description": "Slicer:",
+        "index": 0,
+        "layout": "IPY_MODEL_20ccd2dd64744d07b82a73a54dedfa61",
+        "style": "IPY_MODEL_209d48b6134846958cab4f434cad1e64"
+      }
+    },
+    "bbd34534208d40d4a88c968ac5f0418d": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "e1a06517cf7245bea9909e1d59b499ae": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [
+          "widget-interact"
+        ],
+        "children": [
+          "IPY_MODEL_759fbb8fee764a4fbb84a3d81bac9789",
+          "IPY_MODEL_bbf234d394af423cac0dcade2712e3c4"
+        ],
+        "layout": "IPY_MODEL_bbd34534208d40d4a88c968ac5f0418d"
+      }
+    },
+    "0924ca0187724e3fbd4139ee5ec10332": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "bbf234d394af423cac0dcade2712e3c4": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_0924ca0187724e3fbd4139ee5ec10332",
+        "outputs": []
+      }
+    },
+    "29b4a35e14f4453db6b603f1a986d28a": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "6adaf4d4e77048ec9a51a2b08c972e38": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_759fbb8fee764a4fbb84a3d81bac9789"
+        ],
+        "layout": "IPY_MODEL_29b4a35e14f4453db6b603f1a986d28a"
+      }
+    }
+  }
+}
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "6adaf4d4e77048ec9a51a2b08c972e38"}
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "759fbb8fee764a4fbb84a3d81bac9789"}
+</script>
+
+</body>
+</html>
