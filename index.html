@@ -25,7 +25,10 @@
 
   <nav class="top-nav">
     <a href="#intro">About</a>
-    <a href="#dataset">Visualizations</a>
+    <a href="#dataset">The Crime</a>
+    <a href="#sankey">The People</a>
+    <a href="#visuals">The Time</a>
+    <a href="#map">The Place</a>
     <a href="#conclusions">Findings</a>
   </nav>
 
@@ -45,13 +48,15 @@
       The result is this site, presenting the findings in interesting interactive ways.
       Using this public dataset, we identify temporal and spatial trends and visualize them across boroughs.
       We didn't ignore the human aspect of the crime, looking at the characteristics of the victims and suspects.</p>
-    Use the menu to quickly navigate to different page sections: learn about the dataset, explore visualizations, view the interactive theft map, and read our key findings.
+    <p>
+    Use the menu to navigate to different page sections quickly: learn about the dataset, explore visualizations, view the interactive theft map, and read our key findings.
     </p>
  </section>
 
   
-   <!-- Data Visualizations -->
+   <!-- Data Visualizations ---------------------------------------------------------------------INTRO -------------------------------------->
   <section id="dataset" data-aos="fade-up">
+    <h2>Data Visualizations</h2>
     <p>But first a few visuals to describe what we are working with. </p>
     <div class="visual-cards" data-aos="fade-up">
       <!-- Flip Card 1 -->
@@ -98,46 +103,22 @@
         </div>
       </div>
     </div>
+      
+   <!-- Data Visualizations ---------------------------------------------------------------------THE CRIME -------------------------------------->
    <p>Regarding bike theft, there are three crime categories that the incident could be filed under: Grand Larceny, Petit Larceny, and Robbery.
    The distribution of our reported incidents between these categories can be seen below. As expected, in most cases, the cost of the bike fell under petit larceny.</p> 
   <div style="text-align: center;">
-  <img src="images/my_pie.png" alt="Pie chart" style="max-width: 600px; width: 100%; height: auto;">
-</div>
+    <img src="images/my_pie.png" alt="Pie chart" style="max-width: 600px; width: 100%; height: auto;">
+  </div>
 
 
     <p>For all these categories, the incident was unfortunately completed. The ratio between attempted and completed theft can be seen below.
     It is, however, natural that the attempted cases are overall low ,as it is rare someone would report a theft attempt. 
       We thus conclude that all of the attempted cases were prevented by police interving. </p>
-   < div style="text-align: center;">
-      <iframe src="notebooks/cattempt_completed_percentage.html"
-            width="800" height="600" style="border:none;">
-      </iframe>
-    </div>
   </section>
 
 
-
-  
-
-  <!-- Data Visualizations -->
-  <section id="visuals" data-aos="fade-up">
-    <h2>Data Visualizations</h2>
-    <p>We start our exploration of the data set with the temporal analysis. Using months instead of data for a clearer visual, we divide our dataset into boroughs,
-      and we plot the district's incident counts over time.</p>
-    <div style="text-align: center;">
-      <iframe src="images/bike_thefts_time_plot2.html"
-            width="1000" height="600" style="border:none;">
-      </iframe>
-    </div>
-    <div style="text-align: center;">
-      <iframe src="notebooks/interactive_trend_analysis.html"
-            width="1000" height="600" style="border:none;">
-      </iframe>
-    </div>
-  </section>
-  </section>
-
-  <!-- Theft Hotspot Map -->
+   <!-- Data Visualizations ---------------------------------------------------------------------who-------------------------------------->
   <section id="sankey" data-aos="fade-left">
     <h2>Who's affected: Sankey Diagram : Sex → Race → Age</h2>
     <p>The following Sankey diagrams illustrate the flow of crime data, separately for victims and suspects. 
@@ -155,10 +136,45 @@
           width="100%" height="600" style="border:none;">
     </iframe>
     </div>
+    </div>
+    <div style="text-align: center;">
+      <iframe src="notebooks/cor_matrix.html"
+            width="1000" height="600" style="border:none;">
+      </iframe>
+    </div>
   </section>
   
 
+  
 
+
+   <!-- Data Visualizations --------------------------------------------------------------------- TEMPORAL-------------------------------------->
+  <section id="visuals" data-aos="fade-up">
+    <h2>Temporal Analysis</h2>
+    <p>We start our exploration of the data set with the temporal analysis. Using months instead of data for a clearer visual, we divide our dataset into boroughs,
+      and we plot the district's incident counts over time.</p>
+    <div style="text-align: center;">
+      <iframe src="images/bike_thefts_time_plot2.html"
+            width="1000" height="600" style="border:none;">
+      </iframe>
+    </div>
+    <div style="text-align: center;">
+      <iframe src="notebooks/interactive_trend_analysis.html"
+            width="1000" height="600" style="border:none;">
+      </iframe>
+    </div>
+  </section>
+  
+  <!-- Data Visualizations --------------------------------------------------------------------- map -------------------------------------->
+  <section id="map" data-aos="fade-up">
+    <h2>Map</h2>
+    <p>The map.</p>
+    <div style="text-align: center;">
+      <iframe src="notebooks/heatmap_with_time.html"
+            width="1000" height="600" style="border:none;">
+      </iframe>
+  </section>
+  
   <!-- Findings -->
   <section id="conclusions" data-aos="fade-up">
     <h2>Key Findings</h2>
